@@ -1,6 +1,6 @@
 class script(object):
     START_TXT = """👋 Hai {},
-𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂  <a href=https://t.me/{}>{}</a>, 𝙸𝚊𝚖 𝚂𝚒𝚖𝚙𝚕𝚎 𝙰𝚞𝚝𝚘𝙵𝚒𝚕𝚝𝚎𝚛 𝙱𝚘𝚝 𝙸 𝚌𝚊𝚗 𝙿𝚛𝚘𝚟𝚒𝚍𝚎 𝙰𝚕𝚕 𝚖𝚘𝚟𝚒𝚎𝚜"""          
+𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂  <a href=https://t.me/{}>{}</a>, ഞാൻ Movie Boss എന്ന ഗ്രൂപ്പിൽ മാത്രമേ പ്രവർത്തിക്കുകയൊള്ളു"""          
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
     ABOUT_TXT = """✯ 𝙼𝚈 𝙽𝙰𝙼𝙴: {}
@@ -11,11 +11,11 @@ class script(object):
 ✯ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁: HEROKU
 ✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v1.0.1 [𝙼𝙰𝙹𝙾𝚁]"""
     SOURCE_TXT = """<b>NOTE:</b>
-- This is a EvaMaria project
-- Source - https://github.com/EvamariaTG/EvaMaria 
+- This is not open source project
+- Source - തരില്ല😁 
 
 <b>DEVS:</b>
-- <a href=https://t.me/mkn_bots_updates>MKN BOTZ</a>"""
+- <a href=https://t.me/shahidshibu>Damu Bot</a>"""
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
 - Filter is the feature were users can set automated replies for a particular keyword and EvaMaria will respond whenever a keyword is found the message
