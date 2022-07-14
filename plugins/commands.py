@@ -23,7 +23,7 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('🎬 Movie Group', url='https://t.me/MovieBoss2')
+                InlineKeyboardButton('🎬 Movie Group', url='https://t.me/MovieBoss4')
             ],
             [
                 InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
@@ -43,7 +43,7 @@ async def start(client, message):
     if len(message.command) != 2:
         buttons = [[
             InlineKeyboardButton('👨‍🦱 DEV', url='https://t.me/shahidshibu'),
-            InlineKeyboardButton('🎬 Movie Group', url='https://t.me/MovieBoss2')
+            InlineKeyboardButton('🎬 Movie Group', url='https://t.me/MovieBoss4')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
