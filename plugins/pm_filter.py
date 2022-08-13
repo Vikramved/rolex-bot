@@ -851,7 +851,7 @@ async def advantage_spell_chok(msg):
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         
-        k = await msg.reply("I couldn't find any movie in that name.")
+        k = await msg.reply_photo("https://telegra.ph/file/4bb1968bd091453b0070c.jpg.")
         await asyncio.sleep(8)
         await k.delete()
         return
