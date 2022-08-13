@@ -517,6 +517,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀyᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]
+        await query.message.edit_text(script.SPELL_CHECK_ENG, reply_markup=InlineKeyboardMarkup(btn))
 
 
         await query.answer('Piracy Is Crime')
