@@ -149,9 +149,9 @@ async def next_page(bot, query):
 
     btn. insert(0,
          [
-             InlineKeyboardButton(f'ɪɴꜰᴏ', 'infoo'),
-             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'moviee'),
-             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'seriess')
+             InlineKeyboardButton(f'⚠️ɪɴꜰᴏ', 'infoo'),
+             InlineKeyboardButton(f'🍿ᴍᴏᴠɪᴇ', 'moviee'),
+             InlineKeyboardButton(f'⚜️ꜱᴇʀɪᴇꜱ', 'seriess')
          ]
     )
           
@@ -746,9 +746,9 @@ async def auto_filter(client, msg, spoll=False):
         
     btn.insert(0,
         [
-            InlineKeyboardButton(f'ɪɴꜰᴏ', 'infoo'),
-            InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'moviee'),
-            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'seriess')
+            InlineKeyboardButton(f'⚠️ɪɴꜰᴏ', 'infoo'),
+            InlineKeyboardButton(f'🍿ᴍᴏᴠɪᴇ', 'moviee'),
+            InlineKeyboardButton(f'⚜️ꜱᴇʀɪᴇꜱ', 'seriess')
         ]
     )
 
