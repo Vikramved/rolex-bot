@@ -905,7 +905,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption.script.SPELL_CHECK_ENG, replay_markup=InlineKeyboardMarkup(btn))
+    await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.SPELL_CHECK_ENG, replay_markup=InlineKeyboardMarkup(btn))
                     reply_markup=InlineKeyboardMarkup(btn))
 
 
