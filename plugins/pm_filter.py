@@ -502,7 +502,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "seriess":
         await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ʟᴏᴋɪ S01 E01\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© ᴍᴏᴠɪᴇʙᴏꜱꜱ", show_alert=True)   
         
-           
+   elif query.data == "malspell":
+       btn = [[
+           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+           InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+       ],[
+           InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="engspell")
+       ]]
+       await query.message.edit_text(script.SPELL_CHECK_MAL, replay_markup=InlineKeyboardMarkup(btn))
+    elif query.data == "engspell":
+        btn = [[
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+        ],[
+            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀyᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+        ]]
+
+
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons = [[
