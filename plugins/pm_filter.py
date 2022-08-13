@@ -504,16 +504,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "malspell":
        btn = [[
-           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
-           InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+           InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={query}'),
+           InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text={query}')
        ],[
            InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="engspell")
        ]]
        await query.message.edit_text(script.SPELL_CHECK_MAL, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "engspell":
         btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
-            InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={query}'),
+            InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text={query}')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀyᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]
@@ -846,8 +846,8 @@ async def advantage_spell_chok(msg):
     gs_parsed = []
     if not g_s:
         btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
-            InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={query}'),
+            InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text={query}')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]
@@ -882,8 +882,8 @@ async def advantage_spell_chok(msg):
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist: 
         btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
-            InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={query}'),
+            InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text={query}')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]
@@ -894,8 +894,8 @@ async def advantage_spell_chok(msg):
         return
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
-        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
-        InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={query}'),
+        InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text={query}')
     ],[
         InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
     ]]
