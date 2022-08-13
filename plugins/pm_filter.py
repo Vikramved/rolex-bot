@@ -881,7 +881,8 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-            btn = [[
+        
+         btn = [[
                 InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
                 InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
             ],[
