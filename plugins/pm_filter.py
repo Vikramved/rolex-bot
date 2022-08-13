@@ -850,8 +850,9 @@ async def advantage_spell_chok(msg):
             InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+        ]]
         
-        k = await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.SPELL_CHECK_MAL, replay_markup=InlineKeyboardMarkup(btn))
+        k = await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.SPELL_CHECK_ENG, replay_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -880,7 +881,15 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("I couldn't find anything related to that. Check your spelling നിങ്ങൾ പറഞ്ഞ മൂവി എനിക്ക് കണ്ടെത്താൻ സാധിച്ചില്ല തായേ തന്നിരിക്കുന്നതിൽ ഏതെങ്കിലും ആണോ??")
+            btn = [[
+                InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+                InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+            ],[
+                InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+            ]]
+            
+            
+        k = await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.SPELL_CHECK_MAL, replay_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(8)
         await k.delete()
         return
