@@ -895,13 +895,17 @@ async def advantage_spell_chok(msg):
         return
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
-        InlineKeyboardButton(
+        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+        InlineKeyboardButton('🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+    ],[
+        InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+    ]]
             text=movie.strip(),
             callback_data=f"spolling#{user}#{k}",
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("I couldn't find anything related to that\nDid you mean any one n f these?\nനിങ്ങൾ പറഞ്ഞ മൂവി എനിക്ക് കണ്ടെത്താൻ സാധിച്ചില്ല\nതായേ തന്നിരിക്കുന്നതിൽ ഏതെങ്കിലും ആണോ??",
+    await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption.script.SPELL_CHECK_ENG, replay_markup=InlineKeyboardMarkup(btn))
                     reply_markup=InlineKeyboardMarkup(btn))
 
 
