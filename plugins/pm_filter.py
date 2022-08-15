@@ -507,7 +507,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "malspell":
        btn = [[
-           InlineKeyboardBusea🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q='),
+           InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q='),
            InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text=')
        ],[
            InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="engspell")
