@@ -507,7 +507,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "malspell":
        btn = [[
-           InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q='),
+           InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={query}'),
            InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text=')
        ],[
            InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="engspell")
@@ -515,7 +515,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
        await query.message.edit_text(script.SPELL_CHECK_MAL, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "engspell":
         btn = [[
-            InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q='),
+            InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={query}'),
             InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text=')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀyᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
@@ -791,6 +791,8 @@ async def auto_filter(client, msg, spoll=False):
     if imdb:
         cap = TEMPLATE.format(
             query=search,
+            mention_bot=temp.MENTION,
+            mention_user=message.from_user.mention if message.from_user else message.sender_chat.title,
             title=imdb['title'],
             votes=imdb['votes'],
             aka=imdb["aka"],
@@ -849,7 +851,7 @@ async def advantage_spell_chok(msg):
     gs_parsed = []
     if not g_s:
         btn = [[
-            InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q='),
+            InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={query}'),
             InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text=')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
@@ -885,7 +887,7 @@ async def advantage_spell_chok(msg):
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist: 
         btn = [[
-            InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q='),
+            InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={query}'),
             InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text=')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
