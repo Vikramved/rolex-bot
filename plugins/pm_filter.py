@@ -858,7 +858,7 @@ async def advantage_spell_chok(msg):
             InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
             InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
         ],[
-            InlineKeyboardButton("🇺🇲 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇲", callback_data="engspell")
+            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀyᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]
         
         k = await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.SPELL_CHECK_ENG, reply_markup=InlineKeyboardMarkup(btn))
@@ -894,7 +894,7 @@ async def advantage_spell_chok(msg):
             InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
             InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
         ],[
-            InlineKeyboardButton("🇺🇲 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇲", callback_data="engspell")
+            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀyᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]
       
         k = await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.SPELL_CHECK_ENG, reply_markup=InlineKeyboardMarkup(btn))
@@ -906,7 +906,7 @@ async def advantage_spell_chok(msg):
         InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
         InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
     ],[
-        InlineKeyboardButton("🇺🇲 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇲", callback_data="engspell")
+        InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀyᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
     ]]
     k = await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.SPELL_CHECK_ENG, reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(30)
