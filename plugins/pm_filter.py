@@ -887,8 +887,8 @@ async def advantage_spell_chok(msg):
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist: 
         btn = [[
-            InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q='),
-            InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text=')
+            InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
+            InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]
@@ -899,15 +899,17 @@ async def advantage_spell_chok(msg):
         return
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
-        InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q='),
-        InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text=')
+        InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
+        InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
     ],[
         InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
     ]]
     k = await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.SPELL_CHECK_ENG, reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(30)
     await k.delete()
-    return             
+    return    
+
+        
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
     name = text or message.text
