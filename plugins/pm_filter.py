@@ -506,7 +506,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("അഥവാ ഗ്രൂപ്പ്‌ കോപ്പിറൈറ് കിട്ടി പോയാൽ.. പുതിയ ഗ്രൂപ്പ്‌ തുടങ്ങുമ്പോൾ ഇപ്പോൾ ജോയിൻ ആകുന്ന ചാനൽ വഴി ആയിരിക്കും അറിയിക്കുന്നത് 🤥", show_alert=True)
         
     elif query.data == "malspell":
-       search = query.text
+       search = query.message.text
        reply = search.replace(" ", '+')
        btn = [[
            InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
