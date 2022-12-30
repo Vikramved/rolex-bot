@@ -16,7 +16,7 @@
       "inline"
     ],
     "website": "https://github.com/Akbotmakersnew",
-    "repository": "https://github.com/Shahidshibu/Thorappan-v3",
+    "repository": "https://github.com/Vikramved/rolex-bot",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
