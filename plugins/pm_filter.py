@@ -851,7 +851,7 @@ async def advantage_spell_chok(msg):
         "", msg.text, flags=re.IGNORECASE)  # plis contribute some common words
     query = query.strip() + "movie"
     g_s = await search_gagala(query)
-    g_s += await search_gagala(msg.text)
+    g_s += await search_gagala(query.message.text)
     gs_parsed = []
     if not g_s:
         btn = [[
