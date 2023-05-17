@@ -506,18 +506,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("അഥവാ ഗ്രൂപ്പ്‌ കോപ്പിറൈറ് കിട്ടി പോയാൽ.. പുതിയ ഗ്രൂപ്പ്‌ തുടങ്ങുമ്പോൾ ഇപ്പോൾ ജോയിൻ ആകുന്ന ചാനൽ വഴി ആയിരിക്കും അറിയിക്കുന്നത് 🤥", show_alert=True)
         
     elif query.data == "malspell":
-       search = query.message.text
-       reply = search.replace(" ",'+')
-       btn = [[
-           InlineKeyboardButton(f"🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
-           InlineKeyboardButton(f"🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
-       ],[
-           InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="engspell")
-       ]]
-       await query.message.edit_text(script.SPELL_CHECK_MAL, reply_markup=InlineKeyboardMarkup(btn))
+        btn = [[
+            InlineKeyboardButton(f"🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
+            InlineKeyboardButton(f"🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
+        ],[
+            InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="engspell")
+        ]]        
+        await query.message.edit_text(script.SPELL_CHECK_MAL, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "engspell":
-        search = query.message.text
-        reply = search.replace(" ",'+')
         btn = [[
             InlineKeyboardButton(f"🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
             InlineKeyboardButton(f"🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
