@@ -507,7 +507,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "malspell":
         search = query.message.text
-        reply = search.replace(" ", '+')
         btn = [[
             InlineKeyboardButton(f"🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
             InlineKeyboardButton(f"🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
@@ -517,7 +516,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(script.SPELL_CHECK_MAL, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "engspell":
         search = query.message.text
-        reply = search.replace(" ", '+')
         btn = [[
             InlineKeyboardButton(f"🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
             InlineKeyboardButton(f"🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
