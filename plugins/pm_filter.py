@@ -507,7 +507,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "malspell":
        search = query.message.text
-       reply = search.replace("",'+')
+       reply = search.replace(" ",'+')
        btn = [[
            InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
            InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
@@ -516,8 +516,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
        ]]
        await query.message.edit_text(script.SPELL_CHECK_MAL, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "engspell":
-        search = query.text
-        reply = search.replace("",'+')
+        search = query.message.text
+        reply = search.replace(" ",'+')
         btn = [[
             InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
             InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
@@ -845,7 +845,7 @@ async def auto_filter(client, msg, spoll=False):
 
 async def advantage_spell_chok(msg):
     search = msg.text
-    reply = search.replace("",'+')
+    reply = search.replace(" ",'+')
     query = re.sub(
         r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
         "", msg.text, flags=re.IGNORECASE)  # plis contribute some common words
@@ -901,7 +901,7 @@ async def advantage_spell_chok(msg):
         await asyncio.sleep(30)
         await k.delete()
         return
-    SPELL_CHECK[msg.message_id] = movielist
+    SPELL_CHECK[msg.message_id] = movielist:
     btn = [[
         InlineKeyboardButton("🔍 ɢᴏᴏɢʟᴇ 🔎", url=f'https://google.com/search?q={reply}'),
         InlineKeyboardButton("🔍 ʏᴀɴᴅᴇx 🔎", url=f'https://yandex.com/search?text={reply}')
