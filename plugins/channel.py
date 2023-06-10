@@ -1,7 +1,5 @@
 from pyrogram import Client, filters
 
-import re
-
 from info import CHANNELS
 
 from database.ia_filterdb import save_file
@@ -28,15 +26,19 @@ async def media(bot, message):
 
     media.file_type = file_type
 
-    media.caption = message.caption
+    
 
-    # Remove words mentioned with "@" symbol from the caption
+    # Remove specific text from the caption
 
-    caption_words = re.findall(r'@(\w+)', media.caption)
+    caption = message.caption
 
-    for word in caption_words:
+    if caption is not None:
 
-        media.caption = media.caption.replace(f"@{word}", "")
+        unwanted_text = "╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗\n𝐂𝐡✯𝐧𝐧𝐞𝐥 :- @MovieUpdates_Mr2\n𝐂𝐡✯𝐧𝐧𝐥𝐥 :- @TeamMovieRockerzz_mr"
+
+        caption = caption.replace(unwanted_text, "")
+
+    media.caption = caption
 
     await save_file(media)
 
