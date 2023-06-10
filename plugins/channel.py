@@ -1,10 +1,10 @@
 from pyrogram import Client, filters
 
+import re
+
 from info import CHANNELS
 
 from database.ia_filterdb import save_file
-
-import re
 
 media_filter = filters.document | filters.video | filters.audio
 
@@ -28,27 +28,15 @@ async def media(bot, message):
 
     media.file_type = file_type
 
-    if message.caption:
+    media.caption = message.caption
 
-        caption = message.caption
+    # Remove words mentioned with "@" symbol from the caption
 
-        # Find the word after the "@" symbol
+    caption_words = re.findall(r'@(\w+)', media.caption)
 
-        match = re.search(r'@(\w+)', caption)
+    for word in caption_words:
 
-        if match:
-
-            word_to_replace = match.group(1)
-
-            # Replace the word with "MovieBossTG"
-
-            new_caption = caption.replace(f"@{word_to_replace}", "MovieBossTG")
-
-            media.caption = new_caption
-
-        else:
-
-            media.caption = caption
+        media.caption = media.caption.replace(f"@{word}", "")
 
     await save_file(media)
 
