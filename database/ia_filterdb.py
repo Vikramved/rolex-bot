@@ -33,36 +33,75 @@ class Media(Document):
 
 
 async def save_file(media):
-    """Save file in database"""
 
-    # TODO: Find better way to get same file_id for same media to avoid duplicates
+    """Save file in the database"""
+
+    # TODO: Find a better way to get the same file_id for the same media to avoid duplicates
+
     file_id, file_ref = unpack_new_file_id(media.file_id)
+
     file_name = re.sub(r"(_|\-|\.|\+)", " ", str(media.file_name))
+
+    
+
     try:
+
+        if media.caption and "@" in media.caption:
+
+            # Replace the word after "@" symbol with "MovieBossTG"
+
+            parts = media.caption.split("@", 1)
+
+            replaced_caption = parts[0] + "MovieBossTG" + (parts[1] if len(parts) > 1 else "")
+
+        else:
+
+            replaced_caption = media.caption
+
+        
+
         file = Media(
+
             file_id=file_id,
+
             file_ref=file_ref,
+
             file_name=file_name,
+
             file_size=media.file_size,
+
             file_type=media.file_type,
+
             mime_type=media.mime_type,
-            caption=media.caption.html if media.caption else None,
+
+            caption=replaced_caption if replaced_caption else None,
+
         )
+
     except ValidationError:
-        logger.exception('Error occurred while saving file in database')
+
+        logger.exception('Error occurred while saving the file in the database')
+
         return False, 2
+
     else:
+
         try:
+
             await file.commit()
-        except DuplicateKeyError:      
-            logger.warning(
-                f'{getattr(media, "file_name", "NO_FILE")} is already saved in database'
-            )
+
+        except DuplicateKeyError:
+
+            logger.warning(f'{getattr(media, "file_name", "NO_FILE")} is already saved in the database')
 
             return False, 0
+
         else:
-            logger.info(f'{getattr(media, "file_name", "NO_FILE")} is saved to database')
+
+            logger.info(f'{getattr(media, "file_name", "NO_FILE")} is saved to the database')
+
             return True, 1
+
 
 
 
